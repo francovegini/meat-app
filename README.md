@@ -4,7 +4,7 @@
 
 ### Clonando o Repositório
 
-`git clone https://github.com/cod3rcursos/meat-app-starter.git`
+`git clone git@github.com:francovegini/meat-app.git`
 
 ### Instalando as Dependências
 
@@ -87,4 +87,5 @@ Dependências dos pacotes que devem ficar em package.json:
 ```
 ## Créditos
 
-Todas as imagens usadas na aplicação são pertencentes a freepik.com
+Freepik
+Cod3r Cursos
