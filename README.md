@@ -87,5 +87,4 @@ Dependências dos pacotes que devem ficar em package.json:
 ```
 ## Créditos
 
-Freepik
 Cod3r Cursos
