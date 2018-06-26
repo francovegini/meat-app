@@ -3,8 +3,7 @@ import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'mt-input-container',
-  templateUrl: './input.component.html',
-  styleUrls: ['./input.component.css']
+  templateUrl: './input.component.html'
 })
 export class InputComponent implements OnInit, AfterContentInit {
 
