@@ -10,10 +10,14 @@ import { CartItem } from '../restaurant-detail/shopping-cart/cart-item.model';
 })
 export class OrderComponent implements OnInit {
 
+  // Valor do frete será fixo em 8 reais
+  // Em uma aplicação real, o correto seria trazer esse valor do backend
+  delivery: number = 8;
+
   paymentOptions: RadioOption[] = [
-    {label: 'Dinheiro', value: 'MON'},
-    {label: 'Cartão de Crédito', value: 'CRD'},
-    {label: 'Cartão de Débito', value: 'DEB'}
+    { label: 'Dinheiro', value: 'MON' },
+    { label: 'Cartão de Crédito', value: 'CRD' },
+    { label: 'Cartão de Débito', value: 'DEB' }
   ]
 
   constructor(private orderService: OrderService) { }
@@ -21,19 +25,23 @@ export class OrderComponent implements OnInit {
   ngOnInit() {
   }
 
-  cartItems(): CartItem[]{
+  itemsValue(): number {
+    return this.orderService.itemsValue();
+  }
+
+  cartItems(): CartItem[] {
     return this.orderService.cartItems();
   }
 
-  increaseQty(item: CartItem){
+  increaseQty(item: CartItem) {
     this.orderService.increaseQty(item);
   }
 
-  decreaseQty(item: CartItem){
+  decreaseQty(item: CartItem) {
     this.orderService.decreaseQty(item);
   }
 
-  remove(item: CartItem){
+  remove(item: CartItem) {
     this.orderService.remove(item);
   }
 
