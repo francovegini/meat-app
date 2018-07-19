@@ -3,7 +3,14 @@ import { Restaurant } from './restaurant/restaurant.model';
 import { RestaurantsService } from './restaurants.service';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import 'rxjs/add/operator/switchMap'
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/from';
+import { Observable } from 'rxjs/Observable';
+
 
 @Component({
   selector: 'mt-restaurants',
@@ -39,8 +46,15 @@ export class RestaurantsComponent implements OnInit {
       searchControl: this.searchControl
     })
 
-    this.searchControl.valueChanges.switchMap(searchTerm =>
-      this.restaurantsService.restaurants(searchTerm))
+    this.searchControl.valueChanges
+       // Quando não possuímos o debounceTime, ele mandará uma requisição a cada evento realizado(tecla digitada)
+       // Com o debounceTime, ele mandará uma requisição apenas quando o intervalo de tempo de um evento para outro ser superior a X(nesse caso, 500 ms)
+      .debounceTime(500)  
+      .distinctUntilChanged() // Se o evento atual for igual ao último, ele não mandará uma requisição
+      .switchMap(searchTerm =>
+      this.restaurantsService
+        .restaurants(searchTerm)
+        .catch(error=>Observable.from([])))
       .subscribe(restaurants => this.restaurants = restaurants);
 
     this.restaurantsService.restaurants()
