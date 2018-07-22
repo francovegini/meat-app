@@ -20,6 +20,7 @@ import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponent } from './not-found/not-found.component'
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { LoginComponent } from './security/login/login.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
     ReviewsComponent,
     OrderSummaryComponent,
     NotFoundComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
