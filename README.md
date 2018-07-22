@@ -12,7 +12,7 @@
 
 ### Startar Backend (raiz da aplicação)
 
-nodemon --watch backend backend/dist/server.js
+`nodemon --watch backend backend/dist/server.js`
 
 ## Créditos
 
