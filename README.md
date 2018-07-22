@@ -3,7 +3,9 @@
 ### Instalando as Dependências 
 
 `npm install`
+
 `npm install -g nodemon`
+
 `npm install -g json-server`
 
 ### Startar Frontend
