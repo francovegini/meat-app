@@ -6,15 +6,13 @@
 
 `npm install -g nodemon`
 
-`npm install -g json-server`
-
 ### Startar Frontend
 
 `ng serve` ou `npm start`
 
 ### Startar Backend (raiz da aplicação)
 
-`json-server db.json`
+nodemon --watch backend backend/dist/server.js
 
 ## Créditos
 
