@@ -1,12 +1,18 @@
 # Meat - Angular App Starter
 
-## Instalando as Dependências 
+## Tecnologias utilizadas:
+* [Angular](https://angular.io/)
+* [Nodemon](https://nodemon.io/)
+
+## Executar em desenvolvimento
+
+### Instalar dependências
 
 `npm install`
 
 `npm install -g nodemon`
 
-### Startar Frontend
+### Startar Frontend (raiz da aplicação)
 
 `ng serve` ou `npm start`
 
