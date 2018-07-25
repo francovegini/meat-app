@@ -26,15 +26,15 @@ export class LoginComponent implements OnInit {
       password: this.fb.control('', [Validators.required]),
     })
 
-    this.navigateTo = this.activatedRoute.snapshot.params['to'] || '/'
+    this.navigateTo = this.activatedRoute.snapshot.params['to'] || btoa('/')
   }
 
   login(){
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.password)
                       .subscribe(user => this.notificationService.notify('Bem vindo, ' + user.name),   //CallBack de Sucesso
-                                 response => this.notificationService.notify(response.error.message), //CallBack de Erro
-                                 ()=>{
-                                  this.router.navigate([this.navigateTo])
-                                 })
+                                response => this.notificationService.notify(response.error.message), //CallBack de Erro
+                                ()=>{
+                                  this.router.navigate([atob(this.navigateTo)]);
+                                })
   }
 }
