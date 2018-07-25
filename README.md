@@ -1,6 +1,6 @@
 # Meat - Angular App Starter
 
-### Instalando as Dependências 
+## Instalando as Dependências 
 
 `npm install`
 
