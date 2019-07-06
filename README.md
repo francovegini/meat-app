@@ -14,7 +14,7 @@
 
 ### Startar Frontend (raiz da aplicação)
 
-`ng serve` ou `npm start`
+`npm start`
 
 ### Startar Backend (raiz da aplicação)
 
