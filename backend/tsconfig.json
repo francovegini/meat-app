@@ -1,6 +1,6 @@
 {
-    "compileOnSave": true,
-    "compilerOptions": {
-        "outDir": "dist"
-    }
+  "compileOnSave": true,
+  "compilerOptions": {
+    "outDir": "dist"
+  }
 }

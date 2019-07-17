@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { User, users } from './users'
 import * as jwt from 'jsonwebtoken'
-import {apiConfig} from './api-config'
+import { apiConfig } from './api-config'
 
 export const handleAuthentication = (req: Request, resp: Response) => {
     const user: User = req.body;

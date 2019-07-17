@@ -7,13 +7,13 @@ export const handleAuthorization = (req: Request, resp: Response, next) => {
 
     if (!token) {
         resp.setHeader('WWW-Authenticate', 'Bearer token_type="JWT"');
-        resp.status(401).json({ message: "Você precisa se autenticar." })
+        resp.status(401).json({ message: 'Você precisa se autenticar.' })
     } else {
         jwt.verify(token, apiConfig.secret, (error, decoded) => {
             if (decoded) {
                 next();
             } else {
-                resp.status(403).json({ message: "Não autorizado." })
+                resp.status(403).json({ message: 'Não autorizado.' })
             }
         })
     }

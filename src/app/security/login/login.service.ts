@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Router, NavigationEnd } from '@angular/router'
-import { tap, filter } from 'rxjs/operators';
+import { NavigationEnd, Router } from '@angular/router'
+import { filter, tap } from 'rxjs/operators';
 
 import { MEAT_API } from '../../app.api'
 import { User } from './user.model';
@@ -14,7 +14,7 @@ export class LoginService {
     lastUrl: string;
 
     constructor(private http: HttpClient,
-        private router: Router) {
+                private router: Router) {
 
         this.router.events.pipe(filter(e => e instanceof NavigationEnd))
             .subscribe((e: NavigationEnd) => this.lastUrl = e.url);

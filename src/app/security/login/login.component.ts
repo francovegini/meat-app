@@ -5,36 +5,37 @@ import { LoginService } from './login.service';
 import { NotificationService } from '../../shared/messages/notification.service';
 
 @Component({
-  selector: 'mt-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+    selector: 'mt-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
-  loginForm: FormGroup;
-  navigateTo: string;
+    loginForm: FormGroup;
+    navigateTo: string;
 
-  constructor(private fb: FormBuilder,
-              private loginService: LoginService,
-              private notificationService: NotificationService,
-              private activatedRoute: ActivatedRoute,
-              private router: Router) { }
+    constructor(private fb: FormBuilder,
+                private loginService: LoginService,
+                private notificationService: NotificationService,
+                private activatedRoute: ActivatedRoute,
+                private router: Router) {
+    }
 
-  ngOnInit() {
-    this.loginForm = this.fb.group({
-      email: this.fb.control('', [Validators.required, Validators.email]),
-      password: this.fb.control('', [Validators.required]),
-    })
+    ngOnInit() {
+        this.loginForm = this.fb.group({
+            email: this.fb.control('', [Validators.required, Validators.email]),
+            password: this.fb.control('', [Validators.required]),
+        })
 
-    this.navigateTo = this.activatedRoute.snapshot.params['to'] || btoa('/')
-  }
+        this.navigateTo = this.activatedRoute.snapshot.params['to'] || btoa('/')
+    }
 
-  login(){
-    this.loginService.login(this.loginForm.value.email, this.loginForm.value.password)
-                      .subscribe(user => this.notificationService.notify('Bem vindo, ' + user.name),   //CallBack de Sucesso
-                                response => this.notificationService.notify(response.error.message), //CallBack de Erro
-                                ()=>{
-                                  this.router.navigate([atob(this.navigateTo)]);
-                                })
-  }
+    login() {
+        this.loginService.login(this.loginForm.value.email, this.loginForm.value.password)
+            .subscribe(user => this.notificationService.notify('Bem vindo, ' + user.name),   //CallBack de Sucesso
+                response => this.notificationService.notify(response.error.message), //CallBack de Erro
+                () => {
+                    this.router.navigate([atob(this.navigateTo)]);
+                })
+    }
 }

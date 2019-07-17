@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'mt-order-summary',
-  templateUrl: './order-summary.component.html'
+    selector: 'mt-order-summary',
+    templateUrl: './order-summary.component.html'
 })
 export class OrderSummaryComponent implements OnInit {
 
-  rated: boolean;
+    rated: boolean;
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
-  rate() {
-    this.rated = true;
-  }
+    rate() {
+        this.rated = true;
+    }
 
 }

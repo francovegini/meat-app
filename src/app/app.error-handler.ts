@@ -23,10 +23,10 @@ export class ApplicationErrorHandler extends ErrorHandler {
                         loginService.handleLogin();
                         break;
                     case 403:
-                        this.notificationService.notify(message || "Não autorizado.");
+                        this.notificationService.notify(message || 'Não autorizado.');
                         break;
                     case 404:
-                        this.notificationService.notify(message || "Recurso não encontrado.");
+                        this.notificationService.notify(message || 'Recurso não encontrado.');
                         break;
                 }
             });
