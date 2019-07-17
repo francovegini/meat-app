@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MenuItem } from './menu-item.model';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
@@ -15,7 +15,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
         ])
     ]
 })
-export class MenuItemComponent implements OnInit {
+export class MenuItemComponent {
 
     menuItemState: 'ready';
 
@@ -23,9 +23,6 @@ export class MenuItemComponent implements OnInit {
     @Output() add = new EventEmitter()
 
     constructor() {
-    }
-
-    ngOnInit() {
     }
 
     emitAddEvent() {

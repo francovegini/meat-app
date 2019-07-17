@@ -5,7 +5,7 @@ import { CartItem } from '../../restaurant-detail/shopping-cart/cart-item.model'
     selector: 'mt-order-items',
     templateUrl: './order-items.component.html'
 })
-export class OrderItemsComponent implements OnInit {
+export class OrderItemsComponent {
 
     @Input() items: CartItem[];
 
@@ -14,9 +14,6 @@ export class OrderItemsComponent implements OnInit {
     @Output() remove = new EventEmitter<CartItem>()
 
     constructor() {
-    }
-
-    ngOnInit() {
     }
 
     emitIncreaseQty(item: CartItem) {

@@ -4,14 +4,11 @@ import { Component, OnInit } from '@angular/core';
     selector: 'mt-order-summary',
     templateUrl: './order-summary.component.html'
 })
-export class OrderSummaryComponent implements OnInit {
+export class OrderSummaryComponent {
 
     rated: boolean;
 
     constructor() {
-    }
-
-    ngOnInit() {
     }
 
     rate() {

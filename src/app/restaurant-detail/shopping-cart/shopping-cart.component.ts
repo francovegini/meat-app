@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ShoppingCartService } from './shopping-cart.service';
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
 
@@ -22,14 +22,11 @@ import { animate, keyframes, state, style, transition, trigger } from '@angular/
         ])
     ]
 })
-export class ShoppingCartComponent implements OnInit {
+export class ShoppingCartComponent {
 
     rowState = 'ready';
 
     constructor(private shoppingCartService: ShoppingCartService) {
-    }
-
-    ngOnInit() {
     }
 
     items(): any[] {

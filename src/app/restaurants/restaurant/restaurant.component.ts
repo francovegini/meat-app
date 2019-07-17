@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Restaurant } from './restaurant.model';
 import { animate, state, style, transition, trigger } from '@angular/animations'
 
@@ -15,7 +15,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
         ])
     ]
 })
-export class RestaurantComponent implements OnInit {
+export class RestaurantComponent {
 
     restaurantState = 'ready';
 
@@ -23,8 +23,4 @@ export class RestaurantComponent implements OnInit {
 
     constructor() {
     }
-
-    ngOnInit() {
-    }
-
 }
