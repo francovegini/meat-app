@@ -1,10 +1,10 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
     selector: 'mt-rating',
     templateUrl: './rating.component.html'
 })
-export class RatingComponent implements OnInit {
+export class RatingComponent {
 
     @Output() rated = new EventEmitter<number>()
 
@@ -16,10 +16,6 @@ export class RatingComponent implements OnInit {
 
     constructor() {
     }
-
-    ngOnInit() {
-    }
-
 
     setRate(r: number) {
         this.rate = r;

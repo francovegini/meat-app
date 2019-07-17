@@ -1,26 +1,23 @@
-import { AfterContentInit, Component, ContentChild, Input, OnInit } from '@angular/core';
+import { AfterContentInit, Component, ContentChild, Input } from '@angular/core';
 import { FormControlName, NgModel } from '@angular/forms';
 
 @Component({
     selector: 'mt-input-container',
     templateUrl: './input.component.html'
 })
-export class InputComponent implements OnInit, AfterContentInit {
+export class InputComponent implements AfterContentInit {
 
     @Input() label: string;
     @Input() successMessage: string;
     @Input() errorMessage: string;
-    @Input() showTip: boolean = true;
+    @Input() showTip = true;
 
     input: any;
 
-    @ContentChild(NgModel) model: NgModel
-    @ContentChild(FormControlName) control: FormControlName
+    @ContentChild(NgModel) model: NgModel;
+    @ContentChild(FormControlName) control: FormControlName;
 
     constructor() {
-    }
-
-    ngOnInit() {
     }
 
     ngAfterContentInit() {
