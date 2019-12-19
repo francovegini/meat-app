@@ -12,19 +12,19 @@ export class UserDetailComponent {
     constructor(private loginService: LoginService) {
     }
 
-    user(): User {
+    public user(): User {
         return this.loginService.user;
     }
 
-    isLoggedIn(): boolean {
+    public isLoggedIn(): boolean {
         return this.loginService.isLoggedIn();
     }
 
-    login() {
+    public login() {
         this.loginService.handleLogin();
     }
 
-    logout() {
+    public logout() {
         this.loginService.logout();
     }
 
