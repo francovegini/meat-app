@@ -1,6 +1,6 @@
 # Meat - Angular App Starter
 
-## Tecnologias utilizadas:
+## Tecnologias utilizadas
 * [Angular](https://angular.io/)
 * [Nodemon](https://nodemon.io/)
 
