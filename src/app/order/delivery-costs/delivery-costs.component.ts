@@ -12,7 +12,7 @@ export class DeliveryCostsComponent {
     constructor() {
     }
 
-    total(): number {
+    public total(): number {
         return this.delivery + this.itemsValue;
     }
 

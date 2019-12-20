@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CartItem } from '../../restaurant-detail/shopping-cart/cart-item.model';
 
 @Component({
@@ -9,22 +9,22 @@ export class OrderItemsComponent {
 
     @Input() items: CartItem[];
 
-    @Output() increaseQty = new EventEmitter<CartItem>()
-    @Output() decreaseQty = new EventEmitter<CartItem>()
-    @Output() remove = new EventEmitter<CartItem>()
+    @Output() increaseQty = new EventEmitter<CartItem>();
+    @Output() decreaseQty = new EventEmitter<CartItem>();
+    @Output() remove = new EventEmitter<CartItem>();
 
     constructor() {
     }
 
-    emitIncreaseQty(item: CartItem) {
+    public emitIncreaseQty(item: CartItem) {
         this.increaseQty.emit(item);
     }
 
-    emitDecreaseQty(item: CartItem) {
+    public emitDecreaseQty(item: CartItem) {
         this.decreaseQty.emit(item);
     }
 
-    emitRemove(item: CartItem) {
+    public emitRemove(item: CartItem) {
         this.remove.emit(item);
     }
 
