@@ -21,13 +21,13 @@ export class OrderComponent implements OnInit {
 
     // Valor do frete será fixo em 8 reais
     // Em uma aplicação real, o correto seria trazer esse valor do backend
-    delivery: number = 8;
+    delivery = 8;
 
     paymentOptions: RadioOption[] = [
         { label: 'Dinheiro', value: 'MON' },
         { label: 'Cartão de Crédito', value: 'CRD' },
         { label: 'Cartão de Débito', value: 'DEB' }
-    ]
+    ];
 
     constructor(private orderService: OrderService,
                 private router: Router,
@@ -65,27 +65,27 @@ export class OrderComponent implements OnInit {
             })
     }
 
-    itemsValue(): number {
+    public itemsValue(): number {
         return this.orderService.itemsValue();
     }
 
-    cartItems(): CartItem[] {
+    public cartItems(): CartItem[] {
         return this.orderService.cartItems();
     }
 
-    increaseQty(item: CartItem) {
+    public increaseQty(item: CartItem) {
         this.orderService.increaseQty(item);
     }
 
-    decreaseQty(item: CartItem) {
+    public decreaseQty(item: CartItem) {
         this.orderService.decreaseQty(item);
     }
 
-    remove(item: CartItem) {
+    public remove(item: CartItem) {
         this.orderService.remove(item);
     }
 
-    checkOrder(order: Order) {
+    public checkOrder(order: Order) {
         order.orderItems = this.cartItems()
             .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id));
         this.orderService.checkOrder(order)
@@ -98,7 +98,7 @@ export class OrderComponent implements OnInit {
             })
     }
 
-    isOrderCompleted(): boolean {
+    public isOrderCompleted(): boolean {
         return this.orderId !== undefined;
     }
 

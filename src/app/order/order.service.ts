@@ -14,31 +14,31 @@ export class OrderService {
                 private http: HttpClient) {
     }
 
-    itemsValue(): number {
+    public itemsValue(): number {
         return this.cartService.total();
     }
 
-    cartItems(): CartItem[] {
+    public cartItems(): CartItem[] {
         return this.cartService.items
     }
 
-    increaseQty(item: CartItem) {
+    public increaseQty(item: CartItem) {
         this.cartService.increaseQty(item);
     }
 
-    decreaseQty(item: CartItem) {
+    public decreaseQty(item: CartItem) {
         this.cartService.decreaseQty(item);
     }
 
-    remove(item: CartItem) {
+    public remove(item: CartItem) {
         this.cartService.removeItem(item);
     }
 
-    clear() {
+    public clear() {
         this.cartService.clear();
     }
 
-    checkOrder(order: Order): Observable<string> {
+    public checkOrder(order: Order): Observable<string> {
         return this.http.post<Order>(`${MEAT_API}/orders`, order)
             .pipe(map(order => order.id));
     }
