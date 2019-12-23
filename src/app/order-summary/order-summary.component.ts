@@ -11,7 +11,7 @@ export class OrderSummaryComponent {
     constructor() {
     }
 
-    rate() {
+    public rate() {
         this.rated = true;
     }
 

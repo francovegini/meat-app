@@ -1,12 +1,8 @@
 <div class="col-md-9 col-xs-12">
-
     <mt-menu-item (add)="shoppingCart.addItem($event)" *ngFor="let item of menu | async"
                   [menuItem]="item"></mt-menu-item>
-
 </div>
 
 <div class="col-md-3 col-xs-12">
-
     <mt-shopping-cart #shoppingCart></mt-shopping-cart>
-
 </div>

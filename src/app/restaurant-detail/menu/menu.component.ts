@@ -11,7 +11,7 @@ import { MenuItem } from '../menu-item/menu-item.model';
 })
 export class MenuComponent implements OnInit {
 
-    menu: Observable<MenuItem[]>
+    menu: Observable<MenuItem[]>;
 
     constructor(private restaurantsService: RestaurantsService,
                 private route: ActivatedRoute) {
@@ -20,9 +20,4 @@ export class MenuComponent implements OnInit {
     ngOnInit() {
         this.menu = this.restaurantsService.menuOfRestaurant(this.route.parent.snapshot.params['id'])
     }
-
-    addMenuItem(item: MenuItem) {
-        console.log(item);
-    }
-
 }
