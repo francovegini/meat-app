@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ReviewsComponent implements OnInit {
 
-    reviews: Observable<any>
+    reviews: Observable<any>;
 
     constructor(private restaurantsService: RestaurantsService,
                 private route: ActivatedRoute) {

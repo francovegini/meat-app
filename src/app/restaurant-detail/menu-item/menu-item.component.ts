@@ -25,7 +25,7 @@ export class MenuItemComponent {
     constructor() {
     }
 
-    emitAddEvent() {
+    public emitAddEvent() {
         this.add.emit(this.menuItem)
     }
 
