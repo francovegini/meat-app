@@ -3,7 +3,6 @@
 
 <section class="content">
     <section class="invoice">
-
         <form [formGroup]="orderForm" novalidate>
             <div class="row">
                 <div class="col-xs-12">
@@ -12,7 +11,6 @@
                     </h2>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-xs-12 col-sm-9">
                     <p class="lead">Seus Dados:</p>
@@ -46,7 +44,6 @@
                     </mt-input-container>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-xs-12">
                     <p class="lead">Endereço de Entrega:</p>
@@ -76,7 +73,6 @@
                     </mt-input-container>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-xs-12">
                     <p class="lead">Itens do Pedido:</p>
@@ -87,7 +83,6 @@
                                 [items]="cartItems()">
                 </mt-order-items>
             </div>
-
             <div class="row">
                 <div class="col-sm-6 col-xs-12">
                     <p class="lead">Formas de Pagamento:</p>
@@ -105,9 +100,7 @@
                     </mt-delivery-costs>
                 </div>
             </div>
-
         </form>
-
         <div class="row">
             <div class="col-xs-12">
                 <button (click)="checkOrder(orderForm.value)" [disabled]="!orderForm.valid || cartItems().length === 0"
@@ -116,6 +109,5 @@
                 </button>
             </div>
         </div>
-
     </section>
 </section>
