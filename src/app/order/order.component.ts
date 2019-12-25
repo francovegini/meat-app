@@ -20,7 +20,6 @@ export class OrderComponent implements OnInit {
     orderId: string;
 
     // Valor do frete será fixo em 8 reais
-    // Em uma aplicação real, o correto seria trazer esse valor do backend
     delivery = 8;
 
     paymentOptions: RadioOption[] = [
@@ -41,7 +40,6 @@ export class OrderComponent implements OnInit {
         if (!email || !emailConfirmation) {
             return undefined;
         }
-
         if (email.value !== emailConfirmation.value) {
             return { emailsNotMatch: true }
         }

@@ -16,5 +16,4 @@ class OrderItem {
     }
 }
 
-
 export { Order, OrderItem }
