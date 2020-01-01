@@ -43,8 +43,8 @@ export class RestaurantsComponent implements OnInit {
         })
 
         this.searchControl.valueChanges
-        // Quando não possuímos o debounceTime, ele mandará uma requisição a cada evento realizado(tecla digitada)
-        // Com o debounceTime, ele mandará uma requisição apenas quando o intervalo de tempo de um evento para outro ser superior a X(nesse caso, 500 ms)
+            // Quando não possuímos o debounceTime, ele mandará uma requisição a cada evento realizado(tecla digitada)
+            // Com o debounceTime, ele mandará uma requisição apenas quando o intervalo de tempo de um evento para outro ser superior a X(nesse caso, 500 ms)
             .pipe(
                 debounceTime(500),
                 distinctUntilChanged(), // Se o evento atual for igual ao último, ele não mandará uma requisição)
