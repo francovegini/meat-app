@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { NavigationEnd, Router } from '@angular/router'
 import { filter, tap } from 'rxjs/operators';
-
 import { MEAT_API } from '../../app.api'
 import { User } from './user.model';
 
