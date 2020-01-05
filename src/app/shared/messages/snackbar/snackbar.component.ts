@@ -25,9 +25,8 @@ import { switchMap, tap } from 'rxjs/operators';
 })
 export class SnackbarComponent implements OnInit {
 
-    message: string
-
-    snackVisibility: string = 'hidden'
+    message: string;
+    snackVisibility = 'hidden';
 
     constructor(private notificationService: NotificationService) {
     }
