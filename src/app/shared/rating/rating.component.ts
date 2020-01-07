@@ -6,12 +6,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class RatingComponent {
 
-    @Output() rated = new EventEmitter<number>()
+    @Output() rated = new EventEmitter<number>();
 
-    rates: number[] = [1, 2, 3, 4, 5];
-
+    rates = [1, 2, 3, 4, 5];
     rate = 0;
-
     previousRate: number;
 
     constructor() {
