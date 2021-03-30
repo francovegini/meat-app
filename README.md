@@ -7,19 +7,15 @@
 ## Executar em desenvolvimento
 
 ### Instalar dependências
-
 `npm install`
 
 `npm install -g nodemon`
 
 ### Startar Frontend (raiz da aplicação)
-
 `npm start`
 
 ### Startar Backend (raiz da aplicação)
-
 `nodemon --watch backend backend/dist/server.js`
 
 ## Créditos
-
 Cod3r Cursos
